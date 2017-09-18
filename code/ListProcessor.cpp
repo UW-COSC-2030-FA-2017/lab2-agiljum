@@ -6,7 +6,7 @@
 // Exercise the List class with verbose Node constructor
 //   and destructor.
 
-#include "LinkedList.cpp"
+#include "LinkedList.h"
 
 
 int main()

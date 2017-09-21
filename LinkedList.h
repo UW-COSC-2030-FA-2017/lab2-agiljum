@@ -1,7 +1,8 @@
 #pragma once
 // LinkedList.h
 
-// tom bailey   0740  5 oct 2010
+// Ana Giljum
+// Sept. 18, 2017
 // Declaration of the List class.
 
 // A List stores and manages a sequence of doubles.
@@ -47,7 +48,9 @@ public:
 
 	//*** Accessors ***
 
-	int size(Node* head);
+	int size();
+
+	double sum();
 
 	// post: true has been returned just if this List is
 	//         empty.
@@ -63,6 +66,8 @@ public:
 	// post: x has been added as the first double in this
 	//         List.
 	void insertAsFirst(double x);
+
+	void insertAsLast(double x);
 
 	// pre:  this List is not empty.
 	// post: the first double in this List has been removed

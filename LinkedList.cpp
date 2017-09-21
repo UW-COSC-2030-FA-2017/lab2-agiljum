@@ -44,15 +44,31 @@ const List & List::operator=(const List & other)
 	return *this;
 }
 
-int List::size(Node* head)
+int List::size()
 {
 	int count = 0;
+	Node * head = first_;
 	while (head != NULL)
 	{
 		count++;
 		head = head->next_;
 	}
 	return count;
+}
+
+double List::sum()
+{
+	double sum = 0;
+	if (!empty())
+	{
+		Node * ptr = first_;
+		while (ptr != NULL)
+		{
+			sum = sum + ptr->entry_;
+			ptr = ptr->next_;
+		}
+	}
+	return sum;
 }
 
 bool List::empty() const
@@ -64,6 +80,24 @@ bool List::empty() const
 void List::insertAsFirst(double x)
 {
 	first_ = new Node(x, first_);
+}
+
+void List::insertAsLast(double x)
+{
+	if (empty())
+	{
+		first_ = new Node(x, first_);
+	}
+	else
+	{
+		Node * ptr = first_;
+		while (ptr->next_ != NULL)
+		{
+			ptr = ptr->next_;
+		}
+		Node * newNode = new Node(x, NULL);
+		ptr->next_ = newNode;
+	}
 }
 
 
